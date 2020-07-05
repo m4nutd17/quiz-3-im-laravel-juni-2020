@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('extends.erd');});//
+Route::get('/artikel/create', 'ArticleController@create');//
+Route::post('/artikel', 'ArticleController@store');//
+Route::get('/artikel', 'ArticleController@index');//
+Route::get('/artikel/{id}', 'ArticleController@show');
+Route::get('/artikel/{id}/edit', 'ArticleController@edit'); 
+Route::put('/artikel/{id}', 'ArticleController@update');
+Route::delete('/artikel/{id}', 'ArticleController@destroy');
 
 Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
 Route::post('/items', 'ItemController@store'); // menyimpan data
